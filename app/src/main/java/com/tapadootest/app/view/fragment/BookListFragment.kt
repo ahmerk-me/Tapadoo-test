@@ -2,6 +2,8 @@ package com.tapadootest.app.view.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -126,6 +128,12 @@ class BookListFragment(private val act: MainActivity) : Fragment() {
         })
 
         binding.rvBooksRecycler.adapter = mAdapterBooks
+
+        binding.swipe.setOnRefreshListener { viewModel.getBooks()
+            Handler(Looper.myLooper()!!).postDelayed(Runnable {
+                binding.swipe.isRefreshing = false
+            }, 2000)}
+
     }
 
 
