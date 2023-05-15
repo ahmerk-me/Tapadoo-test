@@ -108,7 +108,7 @@ open class MainActivity : AppCompatActivity() {
                 back.setImageResource(R.drawable.back)
 
             } else {
-                back.visibility = GONE
+                back.visibility = INVISIBLE
             }
 
         }
