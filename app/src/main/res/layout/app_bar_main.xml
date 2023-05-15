@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFDFD"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_bar_normal"
+            layout="@layout/app_bar_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/content_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:background="#FDFDFD"
+        tools:showIn="@layout/app_bar_main" />
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/NoDataFoundLabel"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/mloading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgWhite_transparent25"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/loader_bg"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress_logo" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
